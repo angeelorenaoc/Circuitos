@@ -1,0 +1,97 @@
+
+**** 11/30/23 16:31:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\Circuitos\Filtros\filtros-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\user\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 1000 10 100k
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FILTROS
+R_R1         N14680 0  1.23645k TC=0,0 
+R_R2         N14736 N14717  1.23645k TC=0,0 
+R_R3         N14736 N14915  204.86 TC=0,0 
+R_R4         N14915 N14896  204.86 TC=0,0 
+C_C1         N15076 N14717  0.1u  TC=0,0 
+C_C2         N14717 N14680  0.1u  TC=0,0 
+C_C3         VOUT N14915  0.1u  TC=0,0 
+C_C4         N14896 0  0.1u  TC=0,0 
+E_U2         VOUT 0 VALUE {LIMIT(V(N14896,VOUT)*1E6,-15V,+15V)}
+E_U3         N14736 0 VALUE {LIMIT(V(N14680,N14736)*1E6,-15V,+15V)}
+V_V1         N15076 0 DC 0Vdc AC 1Vac 
+
+**** RESUMING bias.cir ****
+.END
+
+INFO(ORPSIM-16573): AC analysis does not support expression evaluation at each frequency. ABM devices with non-linear operations will be evaluated only at bias point.
+
+**** 11/30/23 16:31:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\Circuitos\Filtros\filtros-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( VOUT)    0.0000  (N14680)    0.0000 (N14717)    0.0000 (N14736)    0.0000     
+
+(N14896)    0.0000 (N14915)    0.0000 (N15076)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/30/23 16:31:15 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bias"  [ U:\Circuitos\Filtros\filtros-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+
